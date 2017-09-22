@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>new.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="css/AdvancedSearch.css">
+	<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+	<script type="text/javascript" src="js/StatisticsAndInquire.js"></script>
+  </head>
+  <script type="text/javascript">
+  	function SetWinHeight(obj) 
+	{ 
+		var win=window.parent.document.getElementById(obj) 
+		if (document.getElementById) 
+		{ 
+			if (win && !window.opera) 
+			{ 
+				if (win.contentDocument && win.contentDocument.body.offsetHeight) 
+					win.height = win.contentDocument.body.offsetHeight; 
+				else if(win.Document && win.Document.body.scrollHeight) 
+					win.height = win.Document.body.scrollHeight; 
+			} 	
+		} 
+	} 
+  </script>
+  <body style="background-color:#F5F5F5">
+ <div>
+<dd class="divsearch" id="ddSubmit" name="ddSubmit" onkeydown="if(event.keyCode==13){SubmitForm();return false;}" >
+	<form action="StatisticsAndInquire/Comprehensiveindex.action" method="post" target="frmfoot">
+        <b class="c7">输入检索条件：</b>
+        <dd style="display:none">
+          <input id="txt_i" type="hidden" value="1" name="txt_i"></input>
+          <input id="txt_c" type="hidden" value="4" name="txt_c"></input>
+          <span id="hidden_logical_txt">
+            <select id="{key}_logical"  name="{key}_logical">
+              <option value="and" selected="">并且</option>
+              <option value="or">或者</option>
+              <option value="not">不含</option>
+            </select>
+          </span>
+          </dd>
+        <dd class="dd01" id="txt_1">
+          <span class="sW1 aomBtn">
+            <a href="javascript:AddRowEx('txt','txt_i','txt_c');" onClick="SetWinHeight('win')">
+              <img src='../images/01.gif' border='0'/>
+            </a>
+            <a href="javascript:DeleteRow('txt','txt_i','txt_c');" onClick="SetWinHeight('win')">
+              <img src='../images/02.gif' border='0'/>
+            </a>
+          </span>
+          <select id='txt_1_sel' name='txt_1_sel' class="selectW1">
+            <option value='OName' selected=''>组织机构</option>
+            <option value='OTmd'>所属部门</option>
+            <option value="OArea">所在地域</option>
+            <option value="OAttribute">机构属性</option>
+          </select>
+          <input value="" id="txt_1_value1" name="txt_1_value1" size="10" 
+          		maxlength="120" type="text" onFocus="if(KeywordVal(this.value)==false) this.value='';document.getElementById('currentid').value=this.id;"
+                onkeypress="SignVal(this,'sign',event)" onpaste="return SignVal(this,'value',event)"  onkeyup="SignVal1(this)"  />
+          <select id='txt_1_freq1' name='txt_1_freq1' onchange='DeleteXls(this)'>
+          	<option value="like">模糊</option>
+          	<option value="equal">精确</option>
+          </select>
+          <select id="txt_1_relation" name="txt_1_relation">
+          	<option value='and' selected=''>并含</option>
+            <option value='or'>或含</option>
+            <option value='not'>不含</option>
+          </select>
+          <input value="" id="txt_1_value2" name="txt_1_value2" size="10"
+          		maxlength="120" type="text" onFocus="if(KeywordVal(this.value)==false) this.value='';document.getElementById('currentid').value=this.id;"
+                onkeypress="SignVal(this,'sign',event)" onpaste="return SignVal(this,'value',event)" onkeyup="SignVal1(this)" />
+          <select id="txt_1_special1" name="txt_1_special1">
+          	<option value="like" selected=''>模糊</option>
+          	<option value="equal">准确</option>
+          </select>	
+        </dd>
+      <input type="hidden" id="txt_1_extension" name ="txt_extension" value=""/>
+      <input type="hidden" id="txt_2_extension" name ="txt_extension" value=""/>
+      <input type="hidden" id="txt_3_extension" name ="txt_extension" value=""/>
+      <input type="hidden" id="txt_4_extension" name ="txt_extension" value=""/>
+      <input type="hidden" id="txt_5_extension" name ="txt_extension" value=""/>
+      <input type="hidden" id="txt_6_extension" name ="txt_extension" value=""/>
+      <input type="hidden" id="txt_7_extension" name ="txt_extension" value=""/>
+        <div class="clear"></div>       
+      <dl id="content" style="zoom:1">
+        <dd style="display:none">
+          <input id="au_i" type="hidden" value="1" name="au_i"></input>
+          <input id="au_c" type="hidden" value="9" name="au_c"></input>
+          <span id="hidden_logical_au">
+            <select id="{key}_logical"  name="{key}_logical">
+              <option value="and" selected="">并且</option>
+              <option value="or">或者</option>
+              <option value="not">不含</option>
+            </select>
+          </span>
+        </dd>
+        <dd class="dd01" id="au_1">
+          <span class="sW1 aomBtn">
+            <a href="javascript:AddRowEx('au','au_i','au_c');" onClick="SetWinHeight('win')">
+              <img src='../images/01.gif' border='0'/>
+            </a>
+            <a href="javascript:DeleteRow('au','au_i','au_c');" onClick="SetWinHeight('win')">
+              <img src='../images/02.gif' border='0'/>
+            </a>
+          </span>
+          <select id='txt_1_sel' name='txt_1_sel' class="selectW1">
+            <option value='DName' selected=''>需求名称</option>
+            <option value='DKey'>关键字</option>
+            <option value='theme'>主要问题</option>
+            <option value="techKey">技术关键</option>
+            <option value="expectTarget">预期目标</option>
+            <option value="techType">科技活动类型</option>
+            <option value="DServics">需求所属领域</option>
+            <option value="DAppIndustry">需求应用行业</option>
+		    <option value="subjects">学科分类</option>
+          </select>
+          <input value="" id="txt_1_value1" name="txt_1_value1" size="10" 
+          		maxlength="120" type="text" onFocus="if(KeywordVal(this.value)==false) this.value='';document.getElementById('currentid').value=this.id;"
+                onkeypress="SignVal(this,'sign',event)" onpaste="return SignVal(this,'value',event)"  onkeyup="SignVal1(this)"  />
+          <select id='txt_1_freq1' name='txt_1_freq1' onchange='DeleteXls(this)'>
+          	<option value="like">模糊</option>
+          	<option value="equal">精确</option>
+          </select>
+          <select id="txt_1_relation" name="txt_1_relation">
+          	<option value='and' selected=''>并含</option>
+            <option value='or'>或含</option>
+            <option value='not'>不含</option>
+          </select>
+          <input value="" id="txt_1_value2" name="txt_1_value2" size="10"
+          		maxlength="120" type="text" onFocus="if(KeywordVal(this.value)==false) this.value='';document.getElementById('currentid').value=this.id;"
+                onkeypress="SignVal(this,'sign',event)" onpaste="return SignVal(this,'value',event)" onkeyup="SignVal1(this)" />
+          <select id="txt_1_special1" name="txt_1_special1">
+          	<option value="like" selected=''>模糊</option>
+          	<option value="equal">准确</option>
+          </select>	
+        </dd>
+          <input type="hidden" id="fieldnowordfrequency" name="fieldnowordfrequency" value="CLC$=|?"/>
+          <input type="hidden" id="SearchFieldRelationDirectory" name="SearchFieldRelationDirectory" value="主题/[],题名/[],关键词/[],摘要/[],作者/[SYS_Author_Relevant],作者单位/[SYS_Organization_Relevant],导师/[SYS_Author_Relevant],第一导师/[SYS_Author_Relevant],导师单位/[SYS_Organization_Relevant],网络出版投稿人/[SYS_Organization_Relevant],学位授予单位/[SYS_Organization_Relevant],中英文目录/[],引文/[],全文/[],ffd/[],基金/[SYS_Fund_Relevant]" />
+          <script language="javascript">if(window.location.href.toLowerCase().indexOf("result_single.aspx") != -1){ ChangeSrc('content');}</script>
+          <dd class="dd01">
+              <label for="year_R">开始时间：</label>
+              <span id="publishdate" style="">
+                  <label>从</label>
+                  <input id="publishdate_from" name="Sstime" size="20" maxlength="20" onkeypress="SignVal(this,'sign',event)" onpaste="return SignVal(this,'value',event)" value='' onClick="this.value = '';getDateString(this, oCalendarChs);ChangeYearOrTime(this,'publishdate','updatedateN');" onChange="RenewDateOpt('publishdate_from','date_opt','publishdate_to');ChangeYearOrTime(this,'publishdate','updatedateN');" type="text"/>
+                  <label>到</label>
+                  <input id="publishdate_to" name="Setime" size="20" maxlength="20" onkeypress="SignVal(this,'sign',event)" onpaste="return SignVal(this,'value',event)"
+                        value='' onClick="this.value = '';getDateString(this, oCalendarChs);ChangeYearOrTime(this,'publishdate','updatedateN');" onChange="RenewDateOpt('publishdate_from','date_opt','publishdate_to');ChangeYearOrTime(this,'publishdate','updatedateN');" type="text"/>
+              </span>
+              <label for="year_R">截止时间：</label>
+              <span id="publishdate" style="">
+                  <label>从</label>
+                  <input id="publishdate_from" name="Estime" size="20" maxlength="20" onkeypress="SignVal(this,'sign',event)" onpaste="return SignVal(this,'value',event)" value='' onClick="this.value = '';getDateString(this, oCalendarChs);ChangeYearOrTime(this,'publishdate','updatedateN');" onChange="RenewDateOpt('publishdate_from','date_opt','publishdate_to');ChangeYearOrTime(this,'publishdate','updatedateN');" type="text"/>
+                  <label>到</label>
+                  <input id="publishdate_to" name="Eetime" size="20" maxlength="20" onkeypress="SignVal(this,'sign',event)" onpaste="return SignVal(this,'value',event)"
+                        value='' onClick="this.value = '';getDateString(this, oCalendarChs);ChangeYearOrTime(this,'publishdate','updatedateN');" onChange="RenewDateOpt('publishdate_from','date_opt','publishdate_to');ChangeYearOrTime(this,'publishdate','updatedateN');" type="text"/>
+              </span>
+      		  <div>
+					<div style="height:8px"></div>
+					<input name="submit" type="submit" value="检索">
+					<input name="submit" type="submit" value="在结果集中查找">
+				</div>
+	</form>
+  </dd>
+  </div>
+  </body>
+</html>
